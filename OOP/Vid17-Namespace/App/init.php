@@ -1,25 +1,25 @@
-<?php 
 
-// require_once 'Produk/InfoProduk.php';
-// require_once 'Produk/Produk.php';
-// require_once 'Produk/Komik.php';
-// require_once 'Produk/Game.php';
-// require_once 'Produk/CetakInfoProduk.php';
-// require_once 'Produk/User.php';
+<?php
 
-// require_once 'Service/User.php';
+// require_once 'App/Produk/InfoProduk.php';
+// require_once 'App/Produk/Produk.php';
+// require_once 'App/Produk/Komik.php';
+// require_once 'App/Produk/Game.php';
+// require_once 'App/Produk/User.php';
 
-//yg atas manual yg bawah autoload
+// require_once 'App/Service/User.php';
 
-spl_autoload_register(function($class){ //autoload
-    // App\Produk\User = ["App", "Produk", "User]
-    $class = explode('\\', $class);
-    $class = end($class);
-    require_once '/Produk/' . $class . '.php.'; //manggil semua class dalem folder produk
+
+
+
+spl_autoload_register(function ($class) {
+  $class = explode('\\', $class);
+  $class = end($class);
+  require_once __DIR__ . '/Produk/' . $class . '.php';
 });
 
-spl_autoload_register(function($class){ //autoload
-    $class = explode('\\', $class);
-    $class = end($class);
-    require_once '/Produk/' . $class . '.php.'; //manggil semua class dalem folder produk
+spl_autoload_register(function ($class) {
+  $class = explode('\\', $class);
+  $class = end($class);
+  require_once __DIR__ . '/Service/' . $class . '.php';
 });
