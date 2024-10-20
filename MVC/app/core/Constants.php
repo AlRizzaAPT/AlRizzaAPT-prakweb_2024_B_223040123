@@ -1,3 +1,3 @@
-<?php
+<?php 
 
-define('BASEURL', 'http://localhost/MVC/public');
+define ("BASEURL","http://Prakweb_2024_B_223040123/MVC/public/");
